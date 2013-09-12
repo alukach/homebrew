@@ -26,12 +26,12 @@ class MbSystem < Formula
 
   def install
     LevitusTempSalinityDb.new.brew do
-
-      levitus_path = '%s/share/mbsystem' % buildpath
-      # (buildpath/'share/mbsystem').install Dir['*']
-
-      system 'mkdir -p %s' % levitus_path
+      system 'mkdir -p %s/share/mbsystem' % buildpath
+      system 'mv annual %s/share/mbsystem/LevitusAnnual82.dat' % buildpath
     end
+    system 'ls %s/share/mbsystem' % buildpath
+    system 'ls %s' % buildpath
+
 
 
 
